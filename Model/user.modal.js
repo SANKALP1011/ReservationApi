@@ -21,7 +21,7 @@ const UserSchema = new moongose.Schema(
       default: false,
     },
     hasBooking: {
-      type: String,
+      type: Boolean,
       default: false,
     },
     UserBookingDetails: [
