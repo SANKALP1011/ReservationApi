@@ -3,10 +3,6 @@ const moongose = require("mongoose");
 
 const TrainSchema = new moongose.Schema(
   {
-    UserId: {
-      type: String,
-      required: true,
-    },
     TrainDetails: [
       {
         TrainName: {
@@ -30,3 +26,4 @@ const TrainSchema = new moongose.Schema(
   },
   { timestamps: true }
 );
+module.exports = new moongose.model("Trains", TrainSchema);

@@ -13,10 +13,10 @@ module.exports = {
     try {
       const newUser = await RegisterUser.save();
       return res.status(200).json(newUser);
-    } catch (e) {
+    } catch (error) {
       return res.status(500).json({
         Success: "No",
-        Message: e,
+        Message: error,
       });
     }
   },
@@ -25,7 +25,7 @@ module.exports = {
     const isUser = await User.findOne({ UserName, Password });
     if (!isUser) {
       return res.status(200).json({
-        Message: "Please regsiter because this user does not exist",
+        Message: "User does not exist",
       });
     } else {
       const updateLoginStatus = await User.findOneAndUpdate({

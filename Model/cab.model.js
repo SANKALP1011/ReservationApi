@@ -3,10 +3,6 @@ const moongose = require("mongoose");
 
 const CabSchema = new moongose.Schema(
   {
-    UserId: {
-      type: String,
-      required: true,
-    },
     CabDetails: [
       {
         CabName: {

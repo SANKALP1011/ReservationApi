@@ -4,6 +4,9 @@ const app = express();
 const mongoose = require("mongoose");
 const port = process.env.PORT || "3001";
 const User = require("./Routes/user.router");
+const Train = require("./Routes/train.router");
+const Flight = require("./Routes/flight.router");
+const Cabs = require("./Routes/cab.router");
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 
@@ -16,6 +19,9 @@ mongoose
     console.log(e);
   });
 app.use(User);
+app.use(Train);
+app.use(Flight);
+app.use(Cabs);
 app.listen(port, (err) => {
   console.log("connected");
 });

@@ -3,10 +3,6 @@ const moongose = require("mongoose");
 
 const flightSchema = new moongose.Schema(
   {
-    UserId: {
-      type: String,
-      required: true,
-    },
     FlightDetails: [
       {
         FlightName: {
