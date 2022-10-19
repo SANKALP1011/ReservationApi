@@ -28,12 +28,15 @@ const UserSchema = new moongose.Schema(
       {
         BookingId: {
           type: Number,
+          default: 0,
         },
         BookingType: {
           type: String,
+          default: "",
         },
         BookingPrice: {
           type: Number,
+          default: 0,
         },
       },
     ],
