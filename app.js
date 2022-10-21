@@ -7,6 +7,7 @@ const User = require("./Routes/user.router");
 const Train = require("./Routes/train.router");
 const Flight = require("./Routes/flight.router");
 const Cabs = require("./Routes/cab.router");
+const Booking = require("./Routes/booking.router");
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 
@@ -22,6 +23,7 @@ app.use(User);
 app.use(Train);
 app.use(Flight);
 app.use(Cabs);
+app.use(Booking);
 app.listen(port, (err) => {
   console.log("connected");
 });

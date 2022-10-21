@@ -24,22 +24,7 @@ const UserSchema = new moongose.Schema(
       type: Boolean,
       default: false,
     },
-    UserBookingDetails: [
-      {
-        BookingId: {
-          type: Number,
-          default: 0,
-        },
-        BookingType: {
-          type: String,
-          default: "",
-        },
-        BookingPrice: {
-          type: Number,
-          default: 0,
-        },
-      },
-    ],
+    UserBookingDetails: [],
   },
   { timestamps: true }
 );
