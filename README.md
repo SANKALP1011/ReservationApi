@@ -45,7 +45,7 @@
     - /trains/:id
     - /limitTrains
  
-# Postman Output
+# Postman Sample Output (Authentication Routes)
   - User Sign Up
   ``` json
   [
