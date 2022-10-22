@@ -3,7 +3,7 @@
  - Once the user have authenticated themselves they can use the Authentication token inorder to access the other protected routes to book.
  - Complete backend for the reservation system.
  
- # Postamn Link
+ # Postaman Link
  > [![Run in Postman](https://run.pstmn.io/button.svg)](https://god.gw.postman.com/run-collection/24017825-e9898502-94c3-4a47-b980-89142bbf3adb?action=collection%2Ffork&collection-url=entityId%3D24017825-e9898502-94c3-4a47-b980-89142bbf3adb%26entityType%3Dcollection%26workspaceId%3D3198dfc5-3073-439e-8560-ae541475bc1d)
 
 # Stack 
