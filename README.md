@@ -84,7 +84,6 @@
 ]
    ```
 
-- I have added the screenshot for just the Authentication routes , inorder to test the api for the booking routes and all the other routes 
     
  
   
