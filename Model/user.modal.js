@@ -24,9 +24,6 @@ const UserSchema = new moongose.Schema(
       type: Boolean,
       default: false,
     },
-    LogInToken: {
-      type: String,
-    },
     UserBookingDetails: [],
   },
   { timestamps: true }
