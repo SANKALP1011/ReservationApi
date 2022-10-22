@@ -6,9 +6,10 @@ const {
   limitedTrainResult,
 } = require("../Controller/train.controller");
 const TrainRouter = express.Router();
+const AuthenticationToken = require("../Middleware/AuthToken");
 
-TrainRouter.post("/addTrains", AddTrains);
-TrainRouter.get("/allTrains", getTrains);
-TrainRouter.get("/trains/:id", getTrainsById);
-TrainRouter.get("/limitTrains", limitedTrainResult);
+TrainRouter.post("/addTrains", AuthenticationToken, AddTrains);
+TrainRouter.get("/allTrains", AuthenticationToken, getTrains);
+TrainRouter.get("/trains/:id", AuthenticationToken, getTrainsById);
+TrainRouter.get("/limitTrains", AuthenticationToken, limitedTrainResult);
 module.exports = TrainRouter;

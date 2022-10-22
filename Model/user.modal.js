@@ -24,8 +24,11 @@ const UserSchema = new moongose.Schema(
       type: Boolean,
       default: false,
     },
+    LogInToken: {
+      type: String,
+    },
     UserBookingDetails: [],
   },
   { timestamps: true }
 );
-module.exports = moongose.model("User", UserSchema);
+module.exports = moongose.model("user", UserSchema);

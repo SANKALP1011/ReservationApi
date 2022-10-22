@@ -1,6 +1,7 @@
 const express = require("express");
 const userModal = require("../Model/user.modal");
 const User = require("../Model/user.modal");
+const { sign } = require("jsonwebtoken");
 
 module.exports = {
   CreateUser: async (req, res) => {
@@ -28,10 +29,16 @@ module.exports = {
         Message: "User does not exist",
       });
     } else {
+      const LogInToken = sign({ Password: isUser }, "RESERV12", {
+        expiresIn: "24h",
+      });
       const updateLoginStatus = await User.findOneAndUpdate({
         isLoggedIn: true,
       });
-      return res.status(200).json(updateLoginStatus);
+      return res.status(200).json({
+        updateLoginStatus,
+        LogInToken,
+      });
     }
   },
 };

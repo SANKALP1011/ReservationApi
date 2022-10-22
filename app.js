@@ -10,6 +10,7 @@ const Cabs = require("./Routes/cab.router");
 const Booking = require("./Routes/booking.router");
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
+require("dotenv").config({ path: require("find-config")(".env") });
 
 mongoose
   .connect(
