@@ -1,5 +1,5 @@
 # ReservationApi v1.1
- - This is an booking api where user can book flight , trains and cabs for their journey.
+ - This is an booking api where user can book flight , trains and cabs for their journey and make the payment for it.
  - Once the user have authenticated themselves they can use the Authentication token inorder to access the other protected routes to book.
  - Complete backend for the reservation system.
  
@@ -13,6 +13,9 @@
   
  # Authentication 
    - Json Web Token
+ 
+ # Payment
+   - Stripe
   
  # Deployment 
    - Heroku (Under progress)
@@ -80,8 +83,6 @@
         "__v": 0
     },
     "LogInToken": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJQYXNzd29yZCI6eyJfaWQiOiI2MzU0MGIyYzA4NTZiZDk5NTZhZTVkYTQiLCJVc2VyTmFtZSI6Ikdva3V1dXV1dXUiLCJFbWFpbCI6Imdva3VAZyxhaWwuY29tIiwiUGFzc3dvcmQiOiJnb2t1dTEyMyIsImlzTG9nZ2VkSW4iOnRydWUsImhhc0Jvb2tpbmciOnRydWUsIlVzZXJCb29raW5nRGV0YWlscyI6bnVsbCwiY3JlYXRlZEF0IjoiMjAyMi0xMC0yMlQxNToyNDoyOC44MDZaIiwidXBkYXRlZEF0IjoiMjAyMi0xMC0yMlQxNzozOToxOC40MzdaIiwiX192IjowfSwiaWF0IjoxNjY2NDYwMzYzLCJleHAiOjE2NjY1NDY3NjN9.axokP91hfn5cLWHSZhJOs1yy1KESnxR5qjZtRwksO7k"
-}
-]
    ```
 
     
