@@ -25,6 +25,10 @@ const UserSchema = new moongose.Schema(
       default: false,
     },
     UserBookingDetails: [],
+    isPaymentDone: {
+      type: Boolean,
+      default: false,
+    },
   },
   { timestamps: true }
 );
