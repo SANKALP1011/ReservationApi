@@ -3,6 +3,7 @@ const express = require("express");
 const app = express();
 const mongoose = require("mongoose");
 const port = process.env.PORT || "3001";
+const Initial = require("./Routes/initial.router");
 const User = require("./Routes/user.router");
 const Train = require("./Routes/train.router");
 const Flight = require("./Routes/flight.router");
@@ -20,6 +21,7 @@ mongoose
   .catch((e) => {
     console.log(e);
   });
+app.use(Initial);
 app.use(User);
 app.use(Train);
 app.use(Flight);
