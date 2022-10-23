@@ -21,6 +21,10 @@ const TrainSchema = new moongose.Schema(
           type: Boolean,
           default: false,
         },
+        CabPrice: {
+          type: Number,
+          default: false,
+        },
       },
     ],
   },

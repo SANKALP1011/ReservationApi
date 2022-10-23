@@ -25,6 +25,10 @@ const flightSchema = new moongose.Schema(
           type: Boolean,
           default: false,
         },
+        FlightPrice: {
+          type: Number,
+          default: null,
+        },
       },
     ],
   },

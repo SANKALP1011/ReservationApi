@@ -13,9 +13,6 @@ const CabSchema = new moongose.Schema(
           type: String,
           required: true,
         },
-        CabsList: {
-          type: Array,
-        },
         CabArivalLocation: {
           type: String,
           required: true,
@@ -27,6 +24,10 @@ const CabSchema = new moongose.Schema(
         isCabBooked: {
           type: Boolean,
           default: false,
+        },
+        Price: {
+          type: Number,
+          default: 0,
         },
       },
     ],
