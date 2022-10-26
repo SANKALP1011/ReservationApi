@@ -1,6 +1,8 @@
 const { urlencoded } = require("express");
 const express = require("express");
 const app = express();
+const swaggerUi = require("swagger-ui-express");
+const swaggerFile = require("./swagger_output.json");
 const mongoose = require("mongoose");
 const port = process.env.PORT || "3001";
 const Initial = require("./Routes/initial.router");
@@ -21,6 +23,7 @@ mongoose
   .catch((e) => {
     console.log(e);
   });
+app.use("/v1", swaggerUi.serve, swaggerUi.setup(swaggerFile));
 app.use(Initial);
 app.use(User);
 app.use(Train);
