@@ -17,13 +17,13 @@ const doc = {
       "This is the authenticated booking api where user can book their flights , cabs and trains and make the payment for it which is protected with the help of stripe.js",
   },
   host: "localhost:3001",
-  schemes: ["http"],
+  schemes: ["https"],
   securityDefinitions: {
     bearerAuth: {
-        type: 'http',
-        scheme: 'bearer',
-        bearerFormat: 'JWT'
-    }
-}
+      type: "https",
+      scheme: "bearer",
+      bearerFormat: "JWT",
+    },
+  },
 };
 swaggerAutogen(outputFile, endpointsFiles, doc);
