@@ -8,15 +8,8 @@
   "host": "localhost:3001",
   "basePath": "/",
   "schemes": [
-    "https"
+    "http"
   ],
-  "securityDefinitions": {
-    "bearerAuth": {
-      "type": "https",
-      "scheme": "bearer",
-      "bearerFormat": "JWT"
-    }
-  },
   "paths": {
     "/SignUp": {
       "post": {
@@ -460,6 +453,13 @@
           }
         }
       }
+    }
+  },
+  "securitySchemes": {
+    "bearerAuth": {
+      "type": "http",
+      "scheme": "bearer",
+      "bearerFormat": "JWT"
     }
   }
 }

@@ -4,6 +4,7 @@ const app = express();
 const swaggerUi = require("swagger-ui-express");
 const swaggerFile = require("./swagger_output.json");
 const mongoose = require("mongoose");
+const cors = require("cors");
 const port = process.env.PORT || "3001";
 const Initial = require("./Routes/initial.router");
 const User = require("./Routes/user.router");
@@ -14,6 +15,7 @@ const Booking = require("./Routes/booking.router");
 const Payment = require("./Routes/payment.router");
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
+app.use(cors());
 require("dotenv").config({ path: require("find-config")(".env") });
 mongoose
   .connect(
