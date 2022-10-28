@@ -24,20 +24,26 @@ module.exports = {
   LoginUser: async (req, res) => {
     const { UserName, Password } = req.body;
     const isUser = await User.findOne({ UserName, Password });
-    if (!isUser) {
-      return res.status(200).json({
-        Message: "User does not exist",
-      });
-    } else {
+    console.log(isUser);
+    try {
+      if (!isUser) {
+        return res.status(200).json({
+          Message: "User does not exist",
+        });
+      }
       const LogInToken = sign({ Password: isUser }, "RESERV12", {
         expiresIn: "24h",
       });
-      const updateLoginStatus = await User.findOneAndUpdate({
+      const updateLoginStatus = await User.findByIdAndUpdate(isUser._id, {
         isLoggedIn: true,
       });
       return res.status(200).json({
         updateLoginStatus,
         LogInToken,
+      });
+    } catch (e) {
+      return res.status(500).json({
+        Message: "Server error",
       });
     }
   },

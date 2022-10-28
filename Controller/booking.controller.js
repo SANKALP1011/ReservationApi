@@ -5,6 +5,7 @@ const Train = require("../Model/train.model");
 const Cab = require("../Model/cab.model");
 const User = require("../Model/user.modal");
 const { AuthenticationToken } = require("../Middleware/AuthToken");
+const { use } = require("../Routes/user.router");
 
 module.exports = {
   bookCab: async (req, res) => {
@@ -72,10 +73,18 @@ module.exports = {
   cancelBooking: async (req, res) => {
     const useridquery = req.query.userid;
     try {
-      const cancelBooking = await User.findByIdAndUpdate(
-        { _id: useridquery },
-        { UserBookingDetails: null }
-      )
+      const checkBookingDone = await User.findById(useridquery);
+      if (checkBookingDone.UserBookingDetails == null) {
+        return res.status(200).json({
+          Message:
+            "Sorry, there is booking under this account. Please check whether you are using the right account to cancel the booking.",
+        });
+      }
+      const cancelBooking = await User.findByIdAndUpdate(useridquery, {
+        UserBookingDetails: null,
+        hasBooking: false,
+        isPaymentDone: false,
+      })
         .then((result) => {
           return res.status(200).json(result);
         })

@@ -17,11 +17,13 @@ const doc = {
       "This is the authenticated booking api where user can book their flights , cabs and trains and make the payment for it which is protected with the help of stripe.js",
   },
   host: "localhost:3001",
-  securitySchemes: {
-    bearerAuth: {
-      type: "http",
-      scheme: "bearer",
-      bearerFormat: "JWT",
+  components: {
+    securitySchemes: {
+      bearerAuth: {
+        type: "http",
+        scheme: "bearer",
+        bearerFormat: "JWT",
+      },
     },
   },
 };
