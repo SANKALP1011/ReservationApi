@@ -18,9 +18,9 @@
    - Stripe
   
  # Deployment 
-   - Heroku (Under progress)
+   - Heroku 
  # Documenation
-   - Swagger (Under progress)
+   - Swagger 
 
 # Routes 
   - User
